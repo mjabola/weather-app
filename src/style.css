@@ -1,0 +1,88 @@
+body {
+  font-family: "Quicksand", sans-serif;
+  font-weight: 300;
+}
+
+h1 {
+  font-family: "Barlow", sans-serif;
+  color: #806054;
+  font-size: 30pt;
+  text-align: center;
+  text-transform: uppercase;
+  padding: 30px;
+  padding-bottom: 0;
+}
+
+h2,
+h3,
+.day {
+  color: #806054;
+  text-transform: capitalize;
+}
+
+a {
+  color: #b38676;
+  text-decoration: none;
+}
+
+sup {
+  font-size: 12pt;
+}
+
+button {
+  border-radius: 10px;
+  margin: 20px auto;
+  display: inline-block;
+  background-color: #fff;
+  border: 2px solid #d69c7a;
+  color: #d69c7a;
+  font-size: 16px;
+  line-height: 22px;
+  padding: 10px 20px;
+  text-decoration: none;
+  box-shadow: 2px 3px 5px 1px #f0f0f0;
+}
+
+button:hover {
+  color: #fff;
+  background: #d69c7a;
+  border: 2px solid #d69c7a;
+  transition: all 200ms ease;
+}
+
+div .button-wrapper {
+  text-align: center;
+}
+
+div .weather-app {
+  border: 1px solid #806054;
+  border-radius: 15px;
+  padding: 20px 20px 10px;
+  margin: 0 auto;
+  max-width: 70%;
+}
+
+.today {
+  max-width: 30%;
+  border-right: 1px solid;
+}
+
+.daily-weather {
+  position: relative;
+  display: inline;
+  margin: 10px;
+}
+
+.weather-emoji {
+  font-size: 30pt;
+}
+
+.enter-city {
+  display: block;
+  margin: 0 auto;
+  max-width: 60%;
+}
+
+.day {
+  font-weight: 500;
+}
