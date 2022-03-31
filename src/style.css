@@ -86,3 +86,9 @@ div .weather-app {
 .day {
   font-weight: 500;
 }
+
+.footer {
+  font-size: 10pt;
+  padding: 20px 0;
+  text-align: center;
+}
