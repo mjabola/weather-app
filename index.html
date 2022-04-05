@@ -22,7 +22,7 @@
   <body>
     <div class="container">
       <h1>How's the Weather?</h1>
-
+<div class="main-wrapper">
       <div class="weather-app">
       <form class="city-search" id="search-city">
             <input
@@ -42,20 +42,27 @@
       </form>
 
       <div class="container">
-
-        <div class="row align-items-start week-result">
-            <div class="col today">
-                <h2><span id="current-temp">21</span> <sup>°C</sup></h2>
-                <h3>Brisbane City</h3>
-                <p class="current-weather">
-                  <span id="datetime">Saturday, 6:00 PM</span><br />
-                  <span class="weather-emoji">🌧</span><br />
-                  <span id="weather-info">Rain</span><br />
-                  Humidity: <span id="humidity">1%</span><br />
-                  Wind: <span id="wind">1 km/h</span><br />
-                </p>
-              </div>
-
+        <div class="row">
+        <div class="col-6">
+          <h2><span id="current-temp">21</span> <sup>°C | °F</sup></h2>
+                <h3>Brisbane City</h3></div>
+<div class="col-6">
+  <h2>🌧</h2>
+ 
+</div>
+<div class="row week-result">
+  <div class="col-6">
+      <ul>
+        <li id="datetime">Saturday, 6:00 PM</li>              
+        <li id="weather-info">Rain</li></ul>
+  </div>
+  <div class="col-6">
+      <ul>
+        <li>Humidity: <span id="humidity">1%</span></li>
+        <li>Wind: <span id="wind">1 km/h</span></li>
+      </ul>
+  </div>
+              <div class="row week-result">
           <div class="col-1 daily-weather">
             <p class="day">Sun</p>
             <p class="weather-emoji">🌩</p>
@@ -88,7 +95,10 @@
         </div>
       </div>
     </div>
-    <p class="footer"><a href="https://github.com/mjabola/weather-app" target="_blank">Open-source code</a> by Margarita Jabola</p>
+  </div>
+</div>
+    <div class="footer">
+<a href="https://github.com/mjabola/weather-app" target="_blank">Open-source code</a> by Margarita Jabola</div>
     <script src="src/index.js"></script>
   </body>
 </html>
