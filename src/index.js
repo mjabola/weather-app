@@ -24,7 +24,7 @@ if (min < 10) {
 dateTime.innerHTML = `${day}, ${hour}:${min}`;
 
 function displayCurrentWeather(response) {
-  let cityName = document.querySelector("h3");
+  let cityName = document.querySelector("#city");
   cityName.innerHTML = response.data.name;
 
   let roundTemp = Math.round(response.data.main.temp);
@@ -46,6 +46,14 @@ function displayCurrentWeather(response) {
   let displayDescription = document.querySelector("#weather-info");
 
   displayDescription.innerHTML = `${description}`;
+
+  let displayIcon = document.querySelector("#icon");
+
+  displayIcon.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+  displayIcon.setAttribute("alt", `description`);
 }
 
 function searchCurrentLocation(position) {
