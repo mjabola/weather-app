@@ -25,6 +25,19 @@ a {
   text-decoration: none;
 }
 
+a:hover {
+  color: #806054;
+}
+
+.container .active {
+  color: #806054;
+  cursor: default;
+}
+
+.container .active:hover {
+  text-decoration: none;
+}
+
 sup {
   font-size: 12pt;
 }

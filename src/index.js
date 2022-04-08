@@ -30,6 +30,7 @@ function displayCurrentWeather(response) {
   let roundTemp = Math.round(response.data.main.temp);
   let displayTemp = document.querySelector("#current-temp");
 
+  celsiusTemperature = roundTemp;
   displayTemp.innerHTML = `${roundTemp}`;
 
   let humidity = response.data.main.humidity;
@@ -79,19 +80,34 @@ function searchCity(event) {
   axios.get(apiUrl).then(displayCurrentWeather);
 }
 
-function switchCelcius(event) {
-  event.preventDefault();
-
-  let c = document.querySelector("#current-temp");
-  c.innerHTML = `17`;
-}
-
 function switchFarenheit(event) {
   event.preventDefault();
 
-  let f = document.querySelector("#current-temp");
-  f.innerHTML = `63`;
+  let farenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
+  let currentTemperature = document.querySelector("#current-temp");
+
+  celsius.classList.remove("active");
+  farenheit.classList.add("active");
+  currentTemperature.innerHTML = Math.round(farenheitTemperature);
 }
+
+function switchCelsius(event) {
+  event.preventDefault();
+
+  let currentTemperature = document.querySelector("#current-temp");
+
+  currentTemperature.innerHTML = celsiusTemperature;
+  celsius.classList.add("active");
+  farenheit.classList.remove("active");
+}
+
+let celsiusTemperature = null;
+
+let farenheit = document.querySelector("#farenheit-link");
+farenheit.addEventListener("click", switchFarenheit);
+
+let celsius = document.querySelector("#celsius-link");
+celsius.addEventListener("click", switchCelsius);
 
 let currentLocationButton = document.querySelector("#current-location");
 currentLocationButton.addEventListener("click", getCurrentLocation);
