@@ -1,27 +1,26 @@
-let now = new Date();
+function formatDate(timestamp) {
+  let now = new Date(timestamp);
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
 
-let dateTime = document.querySelector("#datetime");
-let days = [
-  "Sunday",
-  "Monday",
-  "Tuesday",
-  "Wednesday",
-  "Thursday",
-  "Friday",
-  "Saturday",
-];
-
-let day = days[now.getDay()];
-let hour = now.getHours();
-if (hour < 10) {
-  hour = `0${hour}`;
+  let day = days[now.getDay()];
+  let hour = now.getHours();
+  if (hour < 10) {
+    hour = `0${hour}`;
+  }
+  let min = now.getMinutes();
+  if (min < 10) {
+    min = `0${min}`;
+  }
+  return `Last updated ${day}, ${hour}:${min}`;
 }
-let min = now.getMinutes();
-if (min < 10) {
-  min = `0${min}`;
-}
-
-dateTime.innerHTML = `${day}, ${hour}:${min}`;
 
 function displayCurrentWeather(response) {
   let cityName = document.querySelector("#city");
@@ -32,6 +31,10 @@ function displayCurrentWeather(response) {
 
   celsiusTemperature = roundTemp;
   displayTemp.innerHTML = `${roundTemp}`;
+
+  let dateTime = document.querySelector("#date-time");
+
+  dateTime.innerHTML = formatDate(response.data.dt * 1000);
 
   let humidity = response.data.main.humidity;
   let displayHumidity = document.querySelector("#humidity");
@@ -109,8 +112,10 @@ farenheit.addEventListener("click", switchFarenheit);
 let celsius = document.querySelector("#celsius-link");
 celsius.addEventListener("click", switchCelsius);
 
-let currentLocationButton = document.querySelector("#current-location");
-currentLocationButton.addEventListener("click", getCurrentLocation);
+let currentLocation = document.querySelector("#current-location");
+currentLocation.addEventListener("click", getCurrentLocation);
 
-let goButton = document.querySelector("#search-city");
-goButton.addEventListener("submit", searchCity);
+let form = document.querySelector("#search-city");
+form.addEventListener("submit", searchCity);
+
+searchCity(`Manila`);
