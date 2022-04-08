@@ -76,10 +76,15 @@ function getCurrentLocation(event) {
 function searchCity(event) {
   event.preventDefault();
   let city = document.querySelector("#new-city");
+
+  search(city.value);
+}
+
+function search(city) {
   let units = `metric`;
   let apiKey = `d573e02a83a53078fa38c4d5f190a26a`;
   let apiEndpoint = `https://api.openweathermap.org/data/2.5/weather?q=`;
-  let apiUrl = `${apiEndpoint}${city.value}&units=${units}&appid=${apiKey}`;
+  let apiUrl = `${apiEndpoint}${city}&units=${units}&appid=${apiKey}`;
   axios.get(apiUrl).then(displayCurrentWeather);
 }
 
@@ -118,4 +123,4 @@ currentLocation.addEventListener("click", getCurrentLocation);
 let form = document.querySelector("#search-city");
 form.addEventListener("submit", searchCity);
 
-searchCity(`Manila`);
+search(`Manila`);
