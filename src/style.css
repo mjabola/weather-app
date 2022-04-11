@@ -84,25 +84,24 @@ li {
   list-style-type: none;
 }
 
-.today {
-  max-width: 30%;
-  border-right: 1px solid;
-}
-
-.daily-weather {
-  position: relative;
-  display: inline;
-  margin: 10px;
-}
-
-.weather-emoji {
-  font-size: 30pt;
-}
-
 .enter-city {
   display: block;
   margin: 0 auto;
   max-width: 60%;
+}
+
+.weather-forecast {
+  text-align: center;
+  padding-top: 30px;
+}
+
+.temp-forecast {
+  font-size: 9pt;
+  padding: 10px;
+}
+
+.min-temp-forecast {
+  opacity: 0.5;
 }
 
 .day {
