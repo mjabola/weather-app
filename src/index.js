@@ -19,7 +19,37 @@ function formatDate(timestamp) {
   if (min < 10) {
     min = `0${min}`;
   }
-  return `Last updated ${day}, ${hour}:${min}`;
+  return `Last 
+  updated ${day}, ${hour}:${min}`;
+}
+
+function displayForecast(response) {
+  console.log(response.data.daily);
+  let forecastElement = document.querySelector("#forecast");
+
+  let days = ["Sun", "Mon", "Tue", "Wed"];
+
+  let forecastHTML = `<div class="row">`;
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+                <div class="col-2">
+                  <div class="day">${day}</div>
+                  <img src="media/rain-icon.png" id="icon" alt="_">
+                  <div class="temp-forecast">
+                    <span class="max-temp-forecast">20°</span>
+                    <span class="min-temp-forecast">15°</span>
+                  </div>
+                </div>
+              `;
+  });
+}
+
+function getForecast(coordinates) {
+  let apiKey = `d573e02a83a53078fa38c4d5f190a26a`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}`;
+  axios.get(apiUrl).then(displayForecast);
 }
 
 function displayCurrentWeather(response) {
@@ -58,6 +88,8 @@ function displayCurrentWeather(response) {
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   displayIcon.setAttribute("alt", `description`);
+
+  getForecast(response.data.coord);
 }
 
 function searchCurrentLocation(position) {
