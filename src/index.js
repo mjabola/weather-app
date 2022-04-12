@@ -171,4 +171,4 @@ currentLocation.addEventListener("click", getCurrentLocation);
 let form = document.querySelector("#search-city");
 form.addEventListener("submit", searchCity);
 
-search(`Manila`);
+search(`Brisbane`);
