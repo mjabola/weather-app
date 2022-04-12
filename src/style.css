@@ -118,10 +118,10 @@ li {
   font-size: 8pt;
 }
 
-.footer {
-  font-size: 10pt;
-  padding: 20px 0;
+.bottom-container {
   text-align: center;
+  line-height: 20pt;
+  padding: 14px 16px;
 }
 
 .icon {
