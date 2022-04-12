@@ -32,7 +32,6 @@ function formatDay(timestamp) {
 }
 
 function displayForecast(response) {
-  console.log(response.data.daily);
   let forecastData = response.data.daily;
   let forecastElement = document.querySelector("#forecast");
   let forecastHTML = `<div class="row">`;
@@ -46,7 +45,7 @@ function displayForecast(response) {
                   <div class="day">${formatDay(dailyForecast.dt)}</div>
                   <img src="http://openweathermap.org/img/wn/${
                     dailyForecast.weather[0].icon
-                  }@2x.png" id="icon" alt="_">
+                  }@2x.png" class="icon" id="icon" alt="_">
                   <div class="temp-forecast">
                     <span class="max-temp-forecast">${Math.round(
                       dailyForecast.temp.max

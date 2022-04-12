@@ -29,6 +29,10 @@ a:hover {
   color: #806054;
 }
 
+.container {
+  padding-left: 50px;
+}
+
 .container .active {
   color: #806054;
   cursor: default;
@@ -92,7 +96,7 @@ li {
 
 .weather-forecast {
   text-align: center;
-  padding-top: 30px;
+  padding-top: 50px;
 }
 
 .temp-forecast {
@@ -108,8 +112,16 @@ li {
   font-weight: 500;
 }
 
+.last-updated {
+  font-size: 8pt;
+}
+
 .footer {
   font-size: 10pt;
   padding: 20px 0;
   text-align: center;
+}
+
+.icon {
+  max-width: 50px;
 }
